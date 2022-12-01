@@ -1,6 +1,6 @@
 public class Exercise3 {
     public static void main(String[] args) {
-        int[] array = {1, 4, 7, 1, 8, 9, 2, 1, 3, 8, 0};
+        int[] array = {1, 4, 7, 1, 8, 9, 0, 2, 1, 3, 8, 0};
         removeDublicates(array);
     }
 
@@ -19,6 +19,7 @@ public class Exercise3 {
                         if (array[i] == array[k]) {
                             check = true;
                             count++;
+                            break;
                         }
                     }
                 }
@@ -29,7 +30,6 @@ public class Exercise3 {
             }
         }
 
-        newArray[j] = array[array.length-1];
 
         for (int i = 0; i < newArray.length-count; i++) {
             System.out.print(newArray[i] + ",");
