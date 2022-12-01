@@ -1,38 +1,22 @@
+import java.util.Arrays;
+
 public class Exercise3 {
     public static void main(String[] args) {
-        int[] array = {1, 4, 7, 1, 8, 9, 0, 2, 1, 3, 8, 0};
-        removeDublicates(array);
+        int[] arr = {1,-4,7,1,8,-9,2,1,3,8,0};
+        System.out.println(Arrays.toString(removeDuplicates(arr)));
     }
-
-    public static void removeDublicates(int[] array) {
-        int[] newArray = new int[array.length];
-        int j = 0;
-        int count=0;
-
-        for (int i = 0; i < array.length-1; i++) {
-            boolean check = false;
-
-            if (array[i] != array[i + 1]) {
-
-                if (i>0) {
-                    for (int k = 0; k < i; k++) {
-                        if (array[i] == array[k]) {
-                            check = true;
-                            count++;
-                            break;
-                        }
-                    }
-                }
-
-                if (check == false) {
-                    newArray[j++] = array[i];
-                }
+    public static int[] removeDuplicates(int[] arr) {
+        String arrString = "";
+        for (int i = 0; i < arr.length; i++) {
+            if(!(arrString.contains(String.valueOf(arr[i])))){
+                arrString += arr[i] + ",";
             }
         }
-
-
-        for (int i = 0; i < newArray.length-count; i++) {
-            System.out.print(newArray[i] + ",");
+        String[] stringArr = arrString.split(",");
+        int[] returnArray = new int[stringArr.length];
+        for (int i = 0; i < returnArray.length; i++) {
+            returnArray[i] = Integer.parseInt(stringArr[i]);
         }
+        return returnArray;
     }
 }
