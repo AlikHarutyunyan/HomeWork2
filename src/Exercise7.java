@@ -15,7 +15,7 @@ public class Exercise7 {
         do {
             randomNumber = random.nextInt(1,6);
             if (!(result.contains("" +randomNumber))) {
-                result += randomNumber;
+                result = result.concat("" + randomNumber);
             }
         } while (result.length()<4);
 
@@ -32,11 +32,10 @@ public class Exercise7 {
         int maxTries = calculateTries(numberOfRoute);
 
         do {
-
             if (maxTries > 0) {
                 if (numberOfRoute != 4) {
                     System.out.println("You have " + maxTries + " tries left");
-                } else {
+                }else {
                     System.out.println("You have SURPRISE tries left");
                 }
 
@@ -51,17 +50,14 @@ public class Exercise7 {
                     if (randomNumber == codeToGuess) {
                         System.out.println("Congratulations! You won the game");
                         continuePlaying = false;
-                    } else {
+                    }else {
                         getHint(codeToGuess, randomNumber);
                     }
                 }
-            }
-
-            else {
+            }else {
                 System.out.println("!!!GAME OVER!!! You dont have any tries left");
                 continuePlaying=false;
             }
-
             maxTries--;
         }while (continuePlaying);
     }
@@ -76,9 +72,7 @@ public class Exercise7 {
             if (randomNumberString.contains("" + codeToGuessString.charAt(i))) {
                 if (randomNumberString.charAt(i)==codeToGuessString.charAt(i)) {
                     System.out.println(codeToGuessString.charAt(i) + " is in correct position");
-                }
-
-                else {
+                }else {
                     System.out.println(codeToGuessString.charAt(i) + " exist but in different position");
                 }
             }
@@ -114,17 +108,11 @@ public class Exercise7 {
 
         if (userInput == 1) {
             tries = 20;
-        }
-
-        else if (userInput == 2) {
+        }else if (userInput == 2) {
             tries = 15;
-        }
-
-        else if (userInput == 3) {
+        }else if (userInput == 3) {
             tries = 10;
-        }
-
-        else {
+        }else {
             Random random = new Random();
             tries = random.nextInt(5,25);
         }

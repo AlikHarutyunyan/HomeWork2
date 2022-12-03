@@ -9,7 +9,7 @@ public class Exercise3 {
         String arrString = "";
         for (int i = 0; i < arr.length; i++) {
             if(!(arrString.contains(String.valueOf(arr[i])))){
-                arrString += arr[i] + ",";
+                arrString = arrString.concat(arr[i] + ",");
             }
         }
         String[] stringArr = arrString.split(",");
