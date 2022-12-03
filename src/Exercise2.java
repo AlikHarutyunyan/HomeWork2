@@ -6,7 +6,6 @@ public class Exercise2 {
         System.out.println("Write an Israeli phone number");
         String phoneNumber = scanner.nextLine();
         System.out.println(formatNumber(phoneNumber));
-        System.out.println(phoneNumber);
     }
 
     public static String formatNumber(String phoneNumber) {
@@ -22,12 +21,14 @@ public class Exercise2 {
             }
 
             if (phoneNumber.startsWith("05")) {
-                if (phoneNumber.charAt(3) != '-' && phoneNumber.length() == DIGITS_QUANTITY-1) {
+                if (!phoneNumber.contains("-") && phoneNumber.length() == DIGITS_QUANTITY-1) {
                     formatIsAcceptable = true;
                     String code = phoneNumber.substring(0, 3);
                     phoneNumber = code + phoneNumber.replaceFirst(code, "-");
                 } else if (phoneNumber.charAt(3) == '-' && phoneNumber.length() == DIGITS_QUANTITY) {
-                    formatIsAcceptable = true;
+                    if(!phoneNumber.substring(4).contains("-")){
+                        formatIsAcceptable = true;
+                    }
                 }
             }
             if (!formatIsAcceptable) {
