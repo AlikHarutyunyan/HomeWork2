@@ -32,7 +32,7 @@ public class Exercise5 {
 
     public static boolean isAvailable (char[] board, int place) {
         boolean result = true;
-        if (board[place]=='x' || board[place]=='o') {
+        if (board[place-1]=='x' || board[place-1]=='o') {
             result = false;
         }
         return result;
