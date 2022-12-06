@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Exercise6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Quadratic Equation: ");
         String userInput = scanner.nextLine().trim();
 
         if(isQuadraticEquation(userInput)){
