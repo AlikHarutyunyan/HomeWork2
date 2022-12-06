@@ -6,9 +6,15 @@ public class Exercise5 {
         printBoard(board);
         char symbol = 'o';
         int position;
+        int count = 0;
 
         do {
-            position = getPositionFromUser(board);
+
+            if (count==9) {
+                System.out.println("No winner");
+                break;
+            }
+
             if (symbol=='x') {
                 symbol = 'o';
             }
@@ -16,6 +22,12 @@ public class Exercise5 {
             else {
                 symbol = 'x';
             }
+
+            System.out.println("It's player-" + symbol + " turn");
+            position = getPositionFromUser(board);
+            count++;
+
+
 
         } while (!placeSymbolOnBoard(board,position,symbol));
     }
@@ -31,11 +43,7 @@ public class Exercise5 {
     }
 
     public static boolean isAvailable (char[] board, int place) {
-        boolean result = true;
-        if (board[place-1]=='x' || board[place-1]=='o') {
-            result = false;
-        }
-        return result;
+        return board[place - 1] != 'x' && board[place - 1] != 'o';
     }
 
     public static int getPositionFromUser (char[] board) {
@@ -96,10 +104,12 @@ public class Exercise5 {
 
             if (countX==3) {
                 winner = 'x';
+                break;
             }
 
             else if (countO==3) {
                 winner = 'o';
+                break;
             }
 
             else {
