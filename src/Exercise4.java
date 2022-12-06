@@ -1,6 +1,6 @@
 public class Exercise4 {
     public static void main(String[] args) {
-        int[] array = {5,3,2,1};
+        int[] array = {1,3,6,11,10,9,4,2,0};
         System.out.println(checkRiseAndFall(array));
     }
 
