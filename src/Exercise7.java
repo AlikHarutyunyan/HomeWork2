@@ -53,6 +53,8 @@ public class Exercise7 {
                     }else {
                         getHint(codeToGuess, randomNumber);
                     }
+                }else{
+                    System.out.println("You can use 4 numbers only!!!");
                 }
             }else {
                 System.out.println("!!!GAME OVER!!! You dont have any tries left");
