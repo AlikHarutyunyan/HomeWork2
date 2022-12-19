@@ -35,7 +35,7 @@ public class Exercise2 {
                 phoneNumber = "";
             }
         }else{
-            phoneNumber = "";
+             phoneNumber = "";
         }
         return phoneNumber;
     }
